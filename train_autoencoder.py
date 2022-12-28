@@ -84,15 +84,15 @@ def train_one_epoch(model, criterion, train_loader, optimizer,
             fp16_scaler.step(optimizer)
             fp16_scaler.update()
 
-        # logging
-        # torch.cuda.synchronize()
-    #     metric_logger.update(loss=loss.item())
-    #     metric_logger.update(lr=optimizer.param_groups[0]["lr"])
-    #     metric_logger.update(wd=optimizer.param_groups[0]["weight_decay"])
-    # # gather the stats from all processes
-    # metric_logger.synchronize_between_processes()
-    # print("Averaged stats:", metric_logger)
-    # return {k: meter.global_avg for k, meter in metric_logger.meters.items()}
+        logging
+        torch.cuda.synchronize()
+        metric_logger.update(loss=loss.item())
+        metric_logger.update(lr=optimizer.param_groups[0]["lr"])
+        metric_logger.update(wd=optimizer.param_groups[0]["weight_decay"])
+    # gather the stats from all processes
+    metric_logger.synchronize_between_processes()
+    print("Averaged stats:", metric_logger)
+    return {k: meter.global_avg for k, meter in metric_logger.meters.items()}
 
 
 def main(args):
