@@ -1,0 +1,25 @@
+### data
+imagenet
+data
+
+## weight
+student_weights
+teacher_weights
+
+## cache
+utils/__pycache__
+models/__pycache__
+
+## Other project
+KDEP
+Factor-Transfer-pytorch
+apex
+scripts
+robustness
+src
+
+
+## Future work
+config
+
+
