@@ -1,5 +1,5 @@
-# EncoderKD
-<!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73
+# Encoder-KD
+<!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
 <a name="readme-top"></a>
 
 
@@ -20,7 +20,7 @@
   <a href="https://github.com/DingFong/DroneDectection_yolo">
     <img src="readme_images/logo.jpg" alt="Logo" width="80" height="80">
   </a>
-</div>
+</div> -->
 
 
 
@@ -48,34 +48,34 @@
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
-</details>
+</details> -->
 
 
 <!-- GETTING STARTED -->
-<!-- ## Getting Started
+## Getting Started
 ### Prerequisites
 * Package
   ```sh
   pip install -requirements.txt
   ```
 
-### Training
+### DDP Training
 ```sh
-   python3 train_aux.py --workers 8  --device 0 --batch-size 4 --data data/drone.yaml --img 1280 1280 --cfg cfg/training/yolov7-e6e.yaml --weights 'yolov7-e6e_training.pt' --name yolov7-e6e_drone --hyp data/hyp.scratch.custom.yaml
+   torchrun --nproc_per_node=4 train_autoencoder.py --num_workers 4
 ```
-### Predict
+<!-- ### Predict
 
 ```sh
    python3 detect.py --source DroneDataset/yolo_format/images/test/ --weights runs/train/yolov7-e6e_drone4/weights/best.pt --conf 0.1 --name yolov7-e6e_drone --save-txt --save-conf --img-size 1280
-```
+``` -->
 
-### Generate submission file
+<!-- ### Generate submission file
 --file_model: select model prediciton result you want, whcih save in folder "runs/detect".
 --threshold: set confidence threshold to filter out low confidence result.
 ```sh
   python3 filter_low_probability.py --file_model yolov7-e6e_drone --threshold 0.2
-```
-<p align="right">(<a href="#readme-top">back to top</a>)</p> --> 
+``` -->
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
@@ -136,16 +136,11 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <!-- CONTACT -->
 ## Contact
-
 Fred - a890702000@gmail.com
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
-<!-- 
-* https://github.com/WongKinYiu/yolov7
-<p align="right">(<a href="#readme-top">back to top</a>)</p> -->
-
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
