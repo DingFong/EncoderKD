@@ -63,7 +63,7 @@
   Create folder "data"  
   imagenet-1k - https://www.image-net.org/
 
-* teacher weight
+* teacher weight  
   Create folder "teacher_weights"  
   https://connecthkuhk-my.sharepoint.com/personal/ruifeihe_connect_hku_hk/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fruifeihe%5Fconnect%5Fhku%5Fhk%2FDocuments%2Fproj%2FKDEP%5FCVPR2022%2Fteacher%5Fweights&ga=1
 
