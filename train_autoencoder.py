@@ -83,8 +83,7 @@ def train_one_epoch(model, criterion, train_loader, optimizer,
             utils.cancel_gradients_last_layer(epoch, model, args.freeze_last_layer)
             fp16_scaler.step(optimizer)
             fp16_scaler.update()
-
-        logging
+            
         torch.cuda.synchronize()
         metric_logger.update(loss=loss.item())
         metric_logger.update(lr=optimizer.param_groups[0]["lr"])

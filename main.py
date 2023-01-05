@@ -17,7 +17,7 @@ from utils import constants as cs
 from utils import fine_tunify, transfer_datasets
 from models import resnet
 
-
+os.environ['CUDA_VISIBLE_DEVICES'] = '0,1,2,3'
 def main(args, store):
     '''Given arguments and a cox store, trains as a model. Check out the 
     argparse object in this file for argument options.
@@ -116,7 +116,7 @@ if __name__ =="__main__":
     parser.add_argument('--clip_grad', type=float, default=3.0, help="""Maximal parameter
         gradient norm if using gradient clipping. Clipping with norm .3 ~ 1.0 can
         help optimization for larger ViT architectures. 0 for disabling.""")
-    parser.add_argument('--batch_size_per_gpu', default=128, type=int,
+    parser.add_argument('--batch_size_per_gpu', default=256, type=int,
         help='Per-GPU batch-size : number of distinct images loaded on one GPU.')
     parser.add_argument('--epochs', default=100, type=int, help='Number of epochs of training.')
     parser.add_argument('--freeze_last_layer', default=1, type=int, help="""Number of epochs

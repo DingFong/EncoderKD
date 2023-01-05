@@ -16,6 +16,8 @@ from tqdm import tqdm
 from KD import DistillKL, AngleLoss, DistillKL_mask
 import torch.nn.functional as F
 
+from utils.balance_dataparallel import BalancedDataParallel
+
 try:
     from apex import amp
 except Exception as e:
@@ -55,7 +57,7 @@ def L2_loss_FKD(x, y, norm=False, exp_mode='exp', T=16, align=False):
 def train_model(args, student_model, loaders, store, checkpoint = None, update_params = None, teacher_model=None, disable_no_grad = False, all_feat = False):
 
     ## Multiple GPU Training
-    student_model = torch.nn.DataParallel(student_model, device_ids=args.dp_device_ids, output_device=0).cuda()
+    student_model = BalancedDataParallel(16, student_model.cuda(), device_ids=[0,1,2,3])
     
     
     # Logging setup

@@ -56,8 +56,14 @@
 ### Prerequisites
 * Package
   ```sh
-  pip install -requirements.txt
+  pip install -r -requirements.txt
   ```
+
+* dataset imagenet-1k
+  imagenet-1k - https://www.image-net.org/
+
+* teacher weight
+  https://connecthkuhk-my.sharepoint.com/personal/ruifeihe_connect_hku_hk/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fruifeihe%5Fconnect%5Fhku%5Fhk%2FDocuments%2Fproj%2FKDEP%5FCVPR2022%2Fteacher%5Fweights&ga=1
 
 ### DDP Training
 ```sh
